@@ -16,25 +16,15 @@ import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.IsEqual.equalTo
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT
-import org.springframework.boot.test.web.server.LocalServerPort
 import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
-import java.util.*
+import java.util.UUID
 
-
-@AutoConfigureMockMvc
-@SpringBootTest(webEnvironment = DEFINED_PORT)
-class CanStoreAndReadOrganisationTest {
-
-    @LocalServerPort
-    private val port = 8080
+class CanStoreAndReadOrganisationTest : AbstractBaseTest() {
 
     @Autowired
     private lateinit var mockMvc: MockMvc

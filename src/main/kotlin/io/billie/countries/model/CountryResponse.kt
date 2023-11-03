@@ -1,8 +1,8 @@
 package io.billie.countries.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.util.*
-import javax.validation.constraints.Size
+import jakarta.validation.constraints.Size
+import java.util.UUID
 
 data class CountryResponse(
     val id: UUID,
