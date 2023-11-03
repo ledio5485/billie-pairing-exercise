@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk15 as base
+FROM eclipse-temurin:17-jdk as base
 
 RUN mkdir -p /opt/organisations
 WORKDIR /opt/organisations
